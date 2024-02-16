@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Fair Play</title>
+  </head>
+  <body>
+    <h1 class="header">Pair Play</h1>
+
+    <div id="modal-start">
+      <div class="modal-content">
+        <p id="player-name-error" style="display: none">
+          Please enter a name to start the game
+        </p>
+        <input type="text" id="player-name" placeholder="Enter your name" />
+        <div class="topics">
+          <label for="select-label">Choose a topic:</label>
+          <select id="topics-select" name="topics">
+            <option value="random">Random</option>
+            <option value="cat">Cats</option>
+            <option value="funny">Funny</option>
+            <option value="disney">Disney</option>
+            <option value="pokemon">Pokemon</option>
+            <option value="mountain">Mountains</option>
+            <option value="sport">Sports</option>
+          </select>
+        </div>
+        <button id="start-game">Start</button>
+      </div>
+    </div>
+    <div id="scoreboard" style="display: none"></div>
+    <div id="game-container" style="display: none">
+      <!-- add game board score etc -->
+    </div>
+
+    <div id="modal-end" style="display: none">
+      <div class="modal-content">
+        <!-- Create element at the end of the game here in JS -->
+        <h2>Congratulations</h2>
+        <p id="player-score"></p>
+        <button id="play-again">Play again</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

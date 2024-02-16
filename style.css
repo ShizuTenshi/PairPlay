@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  --color-primary: #004e64;
+  --color-secondary: #25a18e;
+  --color-tertiary: #9fffcb;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-primary);
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 0;
+  color: var(--color-tertiary);
+}
+
+h2 {
+  font-size: 2em;
+  text-align: center;
+  color: var(--color-tertiary);
+}
+
+#modal-start, #modal-end {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: var(--color-secondary);
+  padding: 30px;
+  width: 50%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+#player-name {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background-color: var(--color-tertiary);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#player-name::placeholder {
+  color: var(--color-primary);
+}
+
+#player-name:focus {
+  background-color: var(--color-primary);
+  color: var(--color-tertiary);
+}
+
+#player-name:focus::placeholder {
+  color: var(--color-tertiary);
+}
+
+#start-game, #play-again {
+  width: 100%;
+  background-color: var(--color-tertiary);
+  color: var(--color-primary);
+  padding: 14px;
+  margin: 10px 0;
+  border: 1px solid var(--color-primary);
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#start-game:hover, #play-again:hover {
+  background-color: var(--color-primary);
+  color: var(--color-tertiary);
+}
+
+.topics {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.topics label {
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+#topics-select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background-color: var(--color-tertiary);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#player-name-error {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 10px;
+}
+
+#player-score {
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+#game-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  background-color: var(--color-primary);
+}
+
+.card {
+  width: 130px;
+  height: 130px;
+  background-color: lightpink; /* Light pink color for the back of the card */
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  backface-visibility: hidden;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+#scoreboard {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  padding: 20px;
+  color: var(--color-tertiary);
+}
+
+#scoreboard p {
+  margin: 20;
+  font-size: 1.5em;
+}
+
+@media screen and (max-width: 992px){
+  .card{
+    width: 65px;
+    height: 65px;
+  }
+
+  #scoreboard {
+    top: 15%;
+  }
+  
+  #scoreboard p {
+    font-size: 1.3em;
+  }
+
+  .container {
+    top: 55%;
+  }
+}
+
+
+@media screen and (max-width: 576px){
+  .card{
+    width: 80px;
+    height: 80px;
+  }
+
+  #scoreboard {
+    top: 5%;
+  }
+  
+  #scoreboard p {
+    font-size: 1.2em;
+  }
+
+  .container {
+    top: 60%;
+  }
+}
